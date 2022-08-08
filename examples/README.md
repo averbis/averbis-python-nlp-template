@@ -15,6 +15,6 @@ Entities on the token level are merged to entity-level in the post-processing.
 This [example][EXAMPLE3] displays the usage of summarizer model taken from the Hugging Face Model Hub without any pre- or postprocessing.
 
 
-[EXAMPLE1]: ..examples/sentence_classification
-[EXAMPLE2]: ..examples/sequence_labeling
+[EXAMPLE1]: sentence_classification
+[EXAMPLE2]: ../sequence_labeling
 [EXAMPLE3]: ..examples/text_summarizer
