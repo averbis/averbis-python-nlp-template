@@ -15,11 +15,6 @@ Entities on the token level are merged to entity-level in the post-processing.
 This [example][EXAMPLE3] displays the usage of summarizer model taken from the Hugging Face Model Hub without any pre- or postprocessing.
 
 
-[CONFIG_FILE]: ../main/averbis-nlp-service/src/config.py
-[EXAMPLE]: ../main/examples
-[EXAMPLE1]: ../main/examples/sentence_classification
-[EXAMPLE2]: ../main/examples/sequence_labeling
-[EXAMPLE3]: ../main/examples/text_summarizer
-[HuFaHUB]: https://huggingface.co/models
-[MODEL_FILE]: ../main/averbis-nlp-service/src/Model.py
-[UIMA]: https://uima.apache.org/
+[EXAMPLE1]: ..examples/sentence_classification
+[EXAMPLE2]: ..examples/sequence_labeling
+[EXAMPLE3]: ..examples/text_summarizer
