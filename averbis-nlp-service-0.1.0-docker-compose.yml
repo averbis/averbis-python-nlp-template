@@ -1,0 +1,11 @@
+version: '3.5'
+services:
+    nlp-service:
+        image: averbis-nlp-service:0.1.0
+        networks:
+            - product_network
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "50m"
+                max-file: "3"
