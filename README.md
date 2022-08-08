@@ -159,7 +159,7 @@ Make sure the image name in averbis-nlp-service-0.1.0-docker-compose.yml is the 
 
 # Examples
 
-An overview over examples can be found [here][EXAMPLE]
+An overview over examples can be found [here][EXAMPLE].
 
 
 [CONFIG_FILE]: ../main/averbis-nlp-service/src/config.py
