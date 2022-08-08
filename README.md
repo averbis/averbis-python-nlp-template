@@ -1,6 +1,6 @@
 # Averbis Python NLP template
 
-This Project serves as a template to integrate any Deep Learning Model accessible in Python with Information Discovery.
+This project serves as a template to integrate any Deep Learning or other model accessible in Python with Information Discovery.
 
 Models are set up and hosted in a separate Docker container running within the same Docker compose context as the Information Discovery. A pipeline component in Information Discovery manages communication between Information Discovery and the container hosting the model via a REST API. In general, communication with Information Discovery is handled by the template. Template users only need to set up their model and define the annotations.  
 
@@ -163,6 +163,7 @@ An overview over examples can be found [here][EXAMPLE]
 
 
 [CONFIG_FILE]: ../main/averbis-nlp-service/src/config.py
+[DOCKERFILE]: ../main/Dockerfile
 [EXAMPLE]: ../main/examples
 [EXAMPLE1]: ../main/examples/sentence_classification
 [EXAMPLE2]: ../main/examples/sequence_labeling
