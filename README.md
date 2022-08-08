@@ -124,7 +124,7 @@ Both files are required to start the Docker container hosting the Python model. 
 
 The Docker compose file `averbis-nlp-service-0.1.0-docker-compose.yml` defines the network context for both, the averbis-nlp-service container and Information Discovery.
 
-There are two parameter in the `averbis-nlp-service-0.1.0-docker-compose.yml` file, which might require updates by the user. 
+There are two parameters in the `averbis-nlp-service-0.1.0-docker-compose.yml` file, which might require updates by the user. 
 
 The service name (line 3) is set to `nlp-service` by default. The name of the service name must be unique within the Docker compose context, therefore the service name has to be updated in case multiple containers hosting Python models are in use.
 
