@@ -16,5 +16,5 @@ This [example][EXAMPLE3] displays the usage of summarizer model taken from the H
 
 
 [EXAMPLE1]: sentence_classification
-[EXAMPLE2]: ../sequence_labeling
-[EXAMPLE3]: ..examples/text_summarizer
+[EXAMPLE2]: sequence_labeling
+[EXAMPLE3]: text_summarizer
