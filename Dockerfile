@@ -3,8 +3,8 @@ FROM pytorch/pytorch:1.9.0-cuda10.2-cudnn7-runtime
 
 ### Environment settings
 # User/Paths settings
-ENV USER=averbis \
-ENV UID=1000 \
+ENV USER=averbis
+ENV UID=1000 
 ENV HOME=/home/$USER
 ENV PYTHONPATH "${PYTHONPATH}:$HOME/src"
 ENV PATH "$PATH:$HOME/.local/bin"
