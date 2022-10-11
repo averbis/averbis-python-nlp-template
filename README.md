@@ -6,7 +6,7 @@ Models are set up and hosted in a separate Docker container running within the s
 
 This project provides 
 * The `Dockerfile` defining the settings of the container hosting the Python model
-* The  `averbis-nlp-service-0.1.0-docker-compose.yml` compose file, used to start the averbis-nlp-service Docker image in the same Docker compose context as the Information Discovery
+* The `Docker compose file` used to start the averbis-nlp-service Docker image in the same Docker compose context as the Information Discovery 
 * The folder `averbis-nlp-service` containing the required Python code and resources necessary for receiving and processing requests
 
 # General Usage
@@ -21,6 +21,7 @@ To make use of the template, the following steps are necessary to make annotatio
 2. [Adding the Annotations](#adding-the-annotations)
 3. [Test your implementation](#test-your-implementation)
 4. [Adapting of Dockerfile and Docker compose file](#adaption-of-dockerfile-and-docker-compose-file)
+5. [GPU Support (optional)](#gpu-support-optional) 
 
 Central settings are saved in the [config file][CONFIG_FILE] `src/config.py`.
 
@@ -122,9 +123,11 @@ Check the [examples][EXAMPLE] for more details.
 
 Both files are required to start the Docker container hosting the Python model. The `Dockerfile` contains all commands used for setting up the Docker image of the averbis-nlp-service container. Commonly, changes in the Docker file are not required. 
 
-The Docker compose file `averbis-nlp-service-0.1.0-docker-compose.yml` defines the network context for both, the averbis-nlp-service container and Information Discovery.
+The repository contains two Docker compose files. Selection of the Docker compose file is dependent on the environment, the Docker container is deployed in. The file `averbis-nlp-service-0.1.0-docker-compose-GPU.yml` is used for environments with dedicated GPU support. The following settings are independent of which Docker compose file is selected.
 
-There are two parameters in the `averbis-nlp-service-0.1.0-docker-compose.yml` file, which might require updates by the user. 
+The Docker compose file  defines the network context for both, the averbis-nlp-service container and Information Discovery.
+
+There are two parameters in the Docker compose file, which might require updates by the user. 
 
 The service name (line 3) is set to `nlp-service` by default. The name of the service name must be unique within the Docker compose context, therefore the service name has to be updated in case multiple containers hosting Python models are in use.
 
@@ -156,6 +159,22 @@ docker compose -f [Information Discovery Docker compose file name] -f averbis-nl
 ```
 
 Make sure the image name in averbis-nlp-service-0.1.0-docker-compose.yml is the same used when building the image.
+
+
+## 5. GPU support (optional)
+
+Currently, we only support NVIDIAs GPUs. The computations are based on the CUDA backend. CUDA works with all Nvidia GPUs from the G8x series onwards, including GeForce, Quadro and the Tesla line. The memory requirements are dependent on the respective model deployed.
+
+On the **Docker host machine**, the following steps are required:
+
+* A GPU (with installed NVIDIA driver) (https://github.com/NVIDIA/nvidia-docker/wiki/Frequently-Asked-Questions#how-do-i-install-the-nvidia-driver)
+* NVIDIA toolkit for docker is installed (https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker)
+* Docker-compose is version 1.28.0 (or newer) for NVIDIA gpu support flag (https://docs.docker.com/compose/gpu-support/)
+
+You can then start the averbis-nlp-service container in the environment with GPU support by executing: 
+  ```
+  docker-compose -f docker-compose.yml -f averbis-nlp-service-0.1.0-docker-compose-GPU.yml
+  ```
 
 # Examples
 
