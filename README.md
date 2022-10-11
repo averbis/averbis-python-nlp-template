@@ -149,13 +149,13 @@ In this case the image name (line 4) in the Docker compose file is `averbis-nlp-
 To start the averbis-nlp-service container in the same Docker compose context as Information Discovery, both need to be started together. In case Information Discovery is running, it can be shut down by entering. Make sure to time the shutdown to not interfere with ongoing text analyses.
 
 ```
-docker compose -f [Information Discovery Docker compose file name] down
+docker-compose -f [Information Discovery Docker compose file name] down
 ```
 
 To start both services in the same Docker context, enter:
 
 ```
-docker compose -f [Information Discovery Docker compose file name] -f averbis-nlp-service-0.1.0-docker-compose.yml up -d
+docker-compose -f [Information Discovery Docker compose file name] -f averbis-nlp-service-0.1.0-docker-compose.yml up -d
 ```
 
 Make sure the image name in averbis-nlp-service-0.1.0-docker-compose.yml is the same used when building the image.
